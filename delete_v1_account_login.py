@@ -19,4 +19,5 @@ def delete_v1_account_login():
         url=url,
         headers=headers
     )
+    return response
 

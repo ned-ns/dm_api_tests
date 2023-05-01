@@ -20,3 +20,4 @@ def put_v1_account_token():
         url=url,
         headers=headers
     )
+    return response

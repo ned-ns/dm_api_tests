@@ -19,4 +19,5 @@ def get_v1_account():
         url=url,
         headers=headers
     )
+    return response
 

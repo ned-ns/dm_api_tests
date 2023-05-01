@@ -27,3 +27,4 @@ def put_v1_account_change_email():
         headers=headers,
         json=payload
     )
+    return response
