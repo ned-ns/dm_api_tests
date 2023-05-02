@@ -3,12 +3,12 @@ from services.mailhog import MailHogApi
 
 
 def test_post_v1_account():
-    mailhog = MailHogApi(host="http://localhost:5052")
+    mailhog = MailHogApi(host="http://localhost:5025")
     api = DmApiAccount(host="http://localhost:5051")
     json = {
-        "login": "login768",
-        "email": "login768@mail.ru",
-        "password": "login768"
+        "login": "login767",
+        "email": "login767@mail.ru",
+        "password": "login767"
     }
     response = api.account.post_v1_account(json=json)
     token = mailhog.get_token_from_last_email()
