@@ -1,4 +1,7 @@
-reset_password_model = {
-    "login": "login775",
-    "email": "login675@mail.ru"
-}
+from pydantic import BaseModel, StrictStr
+
+
+class ResetPasswordModel(BaseModel):
+    login: StrictStr
+    email: StrictStr
+
