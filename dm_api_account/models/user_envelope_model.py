@@ -1,5 +1,6 @@
 from enum import Enum
 from typing import List, Optional
+from datetime import datetime
 
 from pydantic import BaseModel, StrictStr, Field, StrictBool, ConstrainedDate
 
@@ -26,10 +27,10 @@ class User(BaseModel):
     small_picture_url: Optional[StrictStr] = Field(alias='smallPictureUrl')
     status: Optional[StrictStr]
     rating: Rating
-    online: Optional[ConstrainedDate]
+    online: Optional[datetime]
     name: Optional[StrictStr]
     location: Optional[StrictStr]
-    registration: Optional[ConstrainedDate]
+    registration: Optional[datetime]
 
 
 class UserEnvelopeModel(BaseModel):

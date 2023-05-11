@@ -14,7 +14,7 @@ def test_put_v1_account_password():
     api = DmApiAccount(host="http://localhost:5051")
     json = ChangePasswordModel(
         login="login756",
-        token="8ce2900e-6e2f-4623-947c-a6547a381135",
+        token='8ce2900e-6e2f-4623-947c-a6547a381135',
         oldPassword="login756",
         newPassword="login756"
     )

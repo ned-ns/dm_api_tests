@@ -1,7 +1,7 @@
-from pydantic import BaseModel, StrictStr
+from pydantic import BaseModel, StrictStr, Field
 
 
 class LoginCredentialsModel(BaseModel):
     login: StrictStr
     password: StrictStr
-    rememberMe: bool
+    remember_me: bool = Field(alias='rememberMe')
