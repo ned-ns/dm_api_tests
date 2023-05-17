@@ -1,7 +1,7 @@
 import requests
 from services.dm_api_account import DmApiAccount
 import structlog
-from dm_api_account.models.change_email_model import ChangeEmailModel
+from dm_api_account.models.change_email_model import ChangeEmail
 
 structlog.configure(
     processors=[
@@ -12,7 +12,7 @@ structlog.configure(
 
 def test_put_v1_account_change_email():
     api = DmApiAccount(host="http://localhost:5051")
-    json = ChangeEmailModel(
+    json = ChangeEmail(
         login="login775",
         email="login675@mail.ru",
         password="login775"

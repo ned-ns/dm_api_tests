@@ -12,6 +12,7 @@ structlog.configure(
 def test_get_v1_account():
     api = DmApiAccount(host="http://localhost:5051")
     headers = {
-        'X-Dm-Auth-Token': 'IQJh+zgzF5AKs9qFsN67MZOtTuclvYlTMLZG65pwG+skEuW5bLuh6o2B3yU/Qt9U1JY2X0bRCU4W0w4+PgbkqdQ5vfwiF96qbnh7E6TjIPuS7BmDRk39+88GAhq3pfPwFLYxc9O2PQs='}
+        'X-Dm-Auth-Token': 'IQJh+zgzF5AKs9qFsN67MZOtTuclvYlTMLZG65pwG+skEuW5bLuh6o2B3yU/Qt9U1JY2X0bRCU4whI/Is50i+bkvuPSnEXQKv9pJJ79hur4b0928XWEEAH7YpfW9J4lTpXwYBZnbgk8='
+    }
     response = api.account.get_v1_account(headers=headers)
     assert response.status_code == 200, f'Статус код ответ должен быть равен 200, но он равен {response.status_code}'

@@ -1,7 +1,7 @@
 import requests
 from services.dm_api_account import DmApiAccount
 import structlog
-from dm_api_account.models.reset_password_model import ResetPasswordModel
+from dm_api_account.models.reset_password_model import ResetPassword
 
 structlog.configure(
     processors=[
@@ -12,7 +12,7 @@ structlog.configure(
 
 def test_post_v1_account_password():
     api = DmApiAccount(host="http://localhost:5051")
-    json = ResetPasswordModel(
+    json = ResetPassword(
         login="login756",
         email="login756@mail.ru"
 )

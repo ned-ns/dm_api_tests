@@ -1,7 +1,7 @@
 import requests
 from services.dm_api_account import DmApiAccount
 import structlog
-from dm_api_account.models.login_credentials_model import LoginCredentialsModel
+from dm_api_account.models.login_credentials_model import LoginCredentials
 
 structlog.configure(
     processors=[
@@ -12,7 +12,7 @@ structlog.configure(
 
 def test_post_v1_account_login():
     api = DmApiAccount(host="http://localhost:5051")
-    json = LoginCredentialsModel(
+    json = LoginCredentials(
         login="login756",
         password="login756",
         rememberMe=False

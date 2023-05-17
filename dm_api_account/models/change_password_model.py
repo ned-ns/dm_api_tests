@@ -1,9 +1,28 @@
-from pydantic import BaseModel, StrictStr, Field
-from uuid import UUID, uuid4
+from __future__ import annotations
+from typing import Optional
+from uuid import UUID
+from pydantic import BaseModel, Extra, Field, StrictStr
 
 
-class ChangePasswordModel(BaseModel):
-    login: StrictStr
-    token: UUID = Field(default_factory=uuid4)
-    old_password: StrictStr = Field(alias='oldPassword')
-    new_password: StrictStr = Field(alias='newPassword')
+class ChangePassword(BaseModel):
+    class Config:
+        extra = Extra.forbid
+
+    login: Optional[StrictStr] = Field(None, description='User login')
+    token: Optional[UUID] = Field(None, description='Password reset token')
+    old_password: Optional[StrictStr] = Field(
+        None, alias='oldPassword', description='Old password'
+    )
+    new_password: Optional[StrictStr] = Field(
+        None, alias='newPassword', description='New password'
+    )
+
+# class ChangePasswordModel(BaseModel):
+#     login: StrictStr
+#     token: UUID = Field(str(uuid4))
+#     old_password: StrictStr = Field(alias='oldPassword')
+#     new_password: StrictStr = Field(alias='newPassword')
+#
+#     @validator('token')
+#     def uuid_as_str(v):
+#         return str(v)

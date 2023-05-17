@@ -1,7 +1,7 @@
 import requests
 from services.dm_api_account import DmApiAccount
 import structlog
-from dm_api_account.models.change_password_model import ChangePasswordModel
+from dm_api_account.models.change_password_model import ChangePassword
 
 structlog.configure(
     processors=[
@@ -12,7 +12,7 @@ structlog.configure(
 
 def test_put_v1_account_password():
     api = DmApiAccount(host="http://localhost:5051")
-    json = ChangePasswordModel(
+    json = ChangePassword(
         login="login756",
         token='8ce2900e-6e2f-4623-947c-a6547a381135',
         oldPassword="login756",
